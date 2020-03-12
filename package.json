@@ -1,0 +1,30 @@
+{
+  "name": "webpack-4",
+  "version": "1.0.0",
+  "description": "Curso de webpack-4",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:manual": "webpack --entry ./index.js --output ./bundle.js --mode development",
+    "build:external:dev": "webpack --config ./external/dev.config.js",
+    "build:external:prod": "webpack --config ./external/prod.config.js",
+    "build:multi-entry-points": "webpack --config ./multi-entry-points/webpack.config.js --mode production",
+    "build:css-style-loader": "webpack --config ./css-style-loader/webpack.config.js --mode production"
+  },
+  "keywords": [
+    "webpack",
+    "curso",
+    "webpack-4",
+    "platzi"
+  ],
+  "author": "Fadith Escorcia",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "4.32.2",
+    "webpack-cli": "3.3.2"
+  },
+  "dependencies": {
+    "css-loader": "^3.4.2",
+    "style-loader": "^1.1.3"
+  }
+}
