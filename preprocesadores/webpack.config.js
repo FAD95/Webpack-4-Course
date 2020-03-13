@@ -25,32 +25,34 @@ module.exports = {
       },
       {
         test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
-        use:{
+        use: {
           loader: "url-loader",
           options: {
-            limit: 90000,
+            limit: 90000
           }
         }
-        
       },
       {
         test: /\.css$/,
-        use: [
-          // {
-          //   loader: MCssEP.loader
-          // },
-          "style-loader",
-          "css-loader"
-        ]
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.styl$/,
+        use: ["style-loader", "css-loader", "stylus-loader"]
+      },
+      {
+        test: /\.less$/,
+        use: ["style-loader", "css-loader", "less-loader"]
       }
     ]
   },
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    // new MCssEP({
-    //   filename: 'css/[name].css'
-    // }),
     new HtmlWP({
       title: "HMR",
       template: path.resolve(__dirname, "index.html")
